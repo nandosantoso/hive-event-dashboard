@@ -53,7 +53,15 @@ function render(){const e=event();if(!e)return;document.title=`HIVE Event Dashbo
  renderUsersAudit();applyRolePermissions();
  const initial=location.hash.slice(1)||'overview';if(document.getElementById('page-'+initial))setPage(initial);
 }
-function field(label,name,value='',type='text',extra=''){return `<label class="field"><span>${label}</span><input name="${name}" type="${type}" value="${esc(value)}" ${extra}></label>`}
+let passwordFieldId=0;
+function field(label,name,value='',type='text',extra=''){
+ if(type==='password'){
+  const id=`password-field-${++passwordFieldId}`;
+  return `<div class="field password-field"><label class="field-label" for="${id}">${label}</label><div class="password-input-wrap"><input id="${id}" name="${name}" type="password" value="${esc(value)}" ${extra}><button class="password-toggle" type="button" data-toggle-password aria-label="Tampilkan password" title="Tampilkan password"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye-shape" d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle class="eye-pupil" cx="12" cy="12" r="2.7"/><path class="eye-slash" d="m4 4 16 16"/></svg></button></div></div>`;
+ }
+ return `<label class="field"><span>${label}</span><input name="${name}" type="${type}" value="${esc(value)}" ${extra}></label>`;
+}
+document.addEventListener('click',ev=>{const button=ev.target.closest('[data-toggle-password]');if(!button)return;const input=button.parentElement.querySelector('input');if(!input)return;const visible=input.type==='password';input.type=visible?'text':'password';button.dataset.visible=String(visible);button.setAttribute('aria-label',visible?'Sembunyikan password':'Tampilkan password');button.title=visible?'Sembunyikan password':'Tampilkan password';input.focus()});
 function openModal(kind='event',edit=false,extra=null){
  const d=document.getElementById('modal'),fields=document.getElementById('modalFields'),e=event(),form=document.getElementById('modalForm');
  const select=(label,name,items,value='')=>`<label class="field"><span>${label}</span><select name="${name}">${items.map(x=>`<option value="${esc(x)}" ${x===value?'selected':''}>${esc(x)}</option>`).join('')}</select></label>`;
