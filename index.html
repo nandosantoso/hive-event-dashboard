@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261016-13">
-  <link rel="stylesheet" href="overrides.css?v=20261016-13">
-  <link rel="stylesheet" href="management.css?v=20261016-13">
+  <link rel="stylesheet" href="styles.css?v=20261016-15">
+  <link rel="stylesheet" href="overrides.css?v=20261016-15">
+  <link rel="stylesheet" href="management.css?v=20261016-15">
 </head>
 <body>
   <div class="app-shell">
@@ -88,12 +88,12 @@
     </main>
   </div>
 
-  <a id="aiChatButton" class="ai-chat-button" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Ask ChatGPT" title="Ask ChatGPT"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 13.8 9l5.7 1.8-5.7 1.8-1.8 5.7-1.8-5.7-5.7-1.8L10.2 9 12 3.5Z"/><path d="m19 14 .9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14Z"/></svg><span>Ask AI</span></a>
+  <a id="aiChatButton" class="ai-chat-button" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Buka ChatGPT" title="Buka ChatGPT"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.75 6.1 6.45.7-4.8 4.35 1.32 6.35L12 17.05l-5.72 3.25 1.32-6.35L2.8 9.6l6.45-.7L12 2.8Z"/></svg></a>
   <div id="printReport" class="print-sheet" aria-hidden="true"></div><div id="printChecklistSheet" class="print-sheet" aria-hidden="true"></div>
   <dialog id="modal"><form method="dialog" id="modalForm"><button class="modal-close" value="cancel" aria-label="Tutup">×</button><div class="section-kicker" id="modalKicker">EDIT EVENT</div><h2 id="modalTitle">Atur informasi event</h2><div id="modalFields"></div><div class="modal-actions"><button class="btn btn-outline" value="cancel">Batal</button><button class="btn btn-dark" id="modalSubmit" value="save">Simpan perubahan</button></div></form></dialog>
   <dialog id="deleteEventDialog" class="confirm-delete-dialog" aria-labelledby="deleteEventTitle"><div class="confirm-delete-content"><div class="section-kicker">EVENT WORKSPACE</div><h2 id="deleteEventTitle">Hapus event?</h2><p>Yakin ingin menghapus <strong id="deleteEventName"></strong>? Semua task, sponsor, dan data lain di event ini akan ikut terhapus.</p><div class="modal-actions"><button class="btn btn-outline" id="cancelDeleteEvent" type="button">Batal</button><button class="btn btn-danger" id="confirmDeleteEvent" type="button">Ya, hapus event</button></div></div></dialog>
   <div id="authGate" class="auth-gate hidden"><form id="authForm" class="auth-card"><div class="brand-mark auth-mark">H<span>✳</span></div><div class="section-kicker">HIVE EVENT DASHBOARD</div><h1 id="authTitle">Masuk ke workspace</h1><p id="authMessage">Masuk untuk mengelola event dan melihat activity log.</p><div id="authFields"></div><button class="btn btn-dark auth-submit" id="authSubmit" type="submit">Masuk</button><div class="auth-foot">Local project access · Sesi tersimpan di browser ini</div></form></div>
   <div id="toast" class="toast" role="status"></div>
-  <script src="app.js?v=20261016-13"></script>
+  <script src="app.js?v=20261016-15"></script>
 </body>
 </html>
