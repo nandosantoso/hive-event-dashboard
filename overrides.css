@@ -139,4 +139,9 @@ tbody tr:hover{background:#183236}
 .partner-values b{font:600 13px 'Space Grotesk';color:#e9e3d9;overflow-wrap:anywhere}
 .partner-values .text-button{font-size:10px;white-space:nowrap}
 @media(max-width:700px){.sponsor-dashboard{grid-template-columns:1fr}.partner-values{gap:10px}.partner-values b{font-size:11px}}
+.team-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.team-row-copy{min-width:0;flex:1}
+.team-edit-button{border:1px solid #345052;border-radius:6px;background:#102326;color:#d1b08b;padding:5px 8px;font:9px 'DM Mono';opacity:.7}
+.team-row:hover .team-edit-button,.team-edit-button:focus-visible{opacity:1}
+.team-edit-button:disabled{opacity:.35;cursor:not-allowed}
 @media(max-width:560px){.filter.active{background:#273b3d}}
