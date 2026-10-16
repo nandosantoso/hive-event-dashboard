@@ -131,4 +131,12 @@ tbody tr:hover{background:#183236}
 .local-auth-note{background:#20383a;border-color:#345052;color:#d1c1a9}
 .add-detail-button{background:#20383a;border-color:#45605e;color:#e2c5a2}.add-detail-button:hover{background:#294548}
 .toast{background:#13292d;border:1px solid #345052;color:#f3eee6}
+.sponsor-dashboard{grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 16px}
+.sponsor-dashboard .metric-value{font-size:clamp(18px,2vw,27px);overflow-wrap:anywhere}
+.partner-values{display:flex;align-items:flex-end;gap:16px;border-top:1px solid #294044;margin-top:12px;padding-top:11px}
+.partner-values>div{display:grid;gap:4px;min-width:0;flex:1}
+.partner-values small{font:9px 'DM Mono';letter-spacing:.8px;color:#aeb9b3}
+.partner-values b{font:600 13px 'Space Grotesk';color:#e9e3d9;overflow-wrap:anywhere}
+.partner-values .text-button{font-size:10px;white-space:nowrap}
+@media(max-width:700px){.sponsor-dashboard{grid-template-columns:1fr}.partner-values{gap:10px}.partner-values b{font-size:11px}}
 @media(max-width:560px){.filter.active{background:#273b3d}}
