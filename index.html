@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261016-2">
-  <link rel="stylesheet" href="overrides.css?v=20261016-2">
-  <link rel="stylesheet" href="management.css?v=20261016-2">
+  <link rel="stylesheet" href="styles.css?v=20261016-3">
+  <link rel="stylesheet" href="overrides.css?v=20261016-3">
+  <link rel="stylesheet" href="management.css?v=20261016-3">
 </head>
 <body>
   <div class="app-shell">
@@ -19,21 +19,21 @@
         <span class="brand-mark">H<span>✳</span></span>
         <span class="brand-copy"><b>HIVE</b><small>EVENT DASHBOARD</small></span>
       </a>
-      <div class="workspace-label">WORKSPACE <button id="switchEvent" class="event-switch" aria-label="Pilih event">⌄</button></div>
+      <div class="workspace-label">WORKSPACE <button id="switchEvent" class="event-switch" aria-label="Select event">⌄</button></div>
       <div id="eventMenu" class="event-menu hidden"></div>
       <div class="event-chip"><span class="live-dot"></span><span id="sidebarEventName">AFTR DARK</span><small>2026</small></div>
       <nav class="nav">
         <div class="nav-caption">OVERVIEW</div>
         <a href="#overview" class="nav-link active" data-page="overview"><span class="nav-icon">◫</span> Dashboard</a>
         <div class="nav-caption">EVENT OPERATIONS</div>
-        <a href="#tasks" class="nav-link" data-page="tasks"><span class="nav-icon">☷</span> Task & produksi <i id="taskNavCount">0</i></a>
+        <a href="#tasks" class="nav-link" data-page="tasks"><span class="nav-icon">☷</span> Tasks & production <i id="taskNavCount">0</i></a>
         <a href="#ticketing" class="nav-link" data-page="ticketing"><span class="nav-icon">▤</span> Ticketing</a>
         <a href="#marketing" class="nav-link" data-page="marketing"><span class="nav-icon">◉</span> Marketing & media</a>
-        <a href="#partners" class="nav-link" data-page="partners"><span class="nav-icon">◇</span> Sponsor & brand</a>
-        <a href="#community" class="nav-link" data-page="community"><span class="nav-icon">♧</span> Community & KOL</a>
-        <a href="#people" class="nav-link" data-page="people"><span class="nav-icon">♙</span> People & team</a>
-        <a href="#logistics" class="nav-link" data-page="logistics"><span class="nav-icon">▦</span> Logistik</a>
-        <a href="#users" class="nav-link" data-page="users"><span class="nav-icon">⚙</span> Users & audit</a>
+        <a href="#partners" class="nav-link" data-page="partners"><span class="nav-icon">◇</span> Sponsors & brands</a>
+        <a href="#community" class="nav-link" data-page="community"><span class="nav-icon">♧</span> Community & creators</a>
+        <a href="#people" class="nav-link" data-page="people"><span class="nav-icon">♙</span> Team & crew</a>
+        <a href="#logistics" class="nav-link" data-page="logistics"><span class="nav-icon">▦</span> Logistics</a>
+        <a href="#users" class="nav-link" data-page="users"><span class="nav-icon">⚙</span> Users & activity</a>
       </nav>
       <div class="sidebar-bottom"><div class="side-avatar" id="profileInitial">—</div><div><b id="profileName">Signed out</b><small id="profileRole">User session</small></div><button id="logoutButton" class="logout-button" title="Keluar">↪</button></div>
     </aside>
@@ -91,6 +91,6 @@
   <dialog id="modal"><form method="dialog" id="modalForm"><button class="modal-close" value="cancel" aria-label="Tutup">×</button><div class="section-kicker" id="modalKicker">EDIT EVENT</div><h2 id="modalTitle">Atur informasi event</h2><div id="modalFields"></div><div class="modal-actions"><button class="btn btn-outline" value="cancel">Batal</button><button class="btn btn-dark" id="modalSubmit" value="save">Simpan perubahan</button></div></form></dialog>
   <div id="authGate" class="auth-gate hidden"><form id="authForm" class="auth-card"><div class="brand-mark auth-mark">H<span>✳</span></div><div class="section-kicker">HIVE EVENT DASHBOARD</div><h1 id="authTitle">Masuk ke workspace</h1><p id="authMessage">Masuk untuk mengelola event dan melihat activity log.</p><div id="authFields"></div><button class="btn btn-dark auth-submit" id="authSubmit" type="submit">Masuk</button><div class="auth-foot">Local project access · Sesi tersimpan di browser ini</div></form></div>
   <div id="toast" class="toast" role="status"></div>
-  <script src="app.js?v=20261016-2"></script>
+  <script src="app.js?v=20261016-3"></script>
 </body>
 </html>

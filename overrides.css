@@ -49,3 +49,86 @@
 @media(max-width:560px){.category-group>summary,.partner-category>summary{gap:7px;padding:12px}.category-summary{font-size:9px}.category-progress{width:42px}.media-upcoming-list{padding:0 12px}.media-upcoming-item{gap:8px}.media-upcoming-item .pill{display:none}.ticket-metrics{grid-template-columns:repeat(2,1fr)}}
 
 .marketing-lower{grid-template-columns:1fr}
+
+/* Nyctophobia palette: ink, deep teal, amber, brown, caramel */
+:root{--ink:#f3eee6;--muted:#acb8b2;--line:#294044;--paper:#081315;--white:#13292d;--lime:#b0804b;--lime-dark:#a3641a;--shadow:0 14px 35px #0005}
+body,.main-area{background:#081315;color:#f3eee6}
+.sidebar{background:#061011;border-color:#1c3033}
+.topbar{background:#081315ed;border-color:#203639}
+.brand-copy b,.hero-row h1,.page-heading h1,.metric-value,.panel-heading h3,.panel h3,.item-name{color:#f3eee6}
+.hero-row h1 em,.page-heading h1 em{color:#b0804b}
+.metric-card,.panel,.partner-card,.ticket-stat-card,.table-panel,.upcoming-media-panel{background:#13292d;border-color:#294044;color:#e7e5df}
+.metric-card.metric-dark,.timeline-panel,.volunteer-panel,.ad-panel{background:#173236;border-color:#315052}
+.progress-panel,.pulse-panel{background:#13292d;border-color:#294044}
+.metric-top,.metric-bottom,.metric-icon,.priority-meta,.partner-type,.panel p,.empty-state p{color:#aeb9b3}
+.metric-bottom,.metric-dark .metric-bottom{border-color:#294044}
+.metric-icon{color:#b0804b}
+.metric-icon .metric-svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.metric-arrow,.calendar-icon,.round-icon{color:#b0804b}
+.btn-dark,.btn-light,.auth-submit{background:#a3641a;color:#fff7ed;border-color:#a3641a}
+.btn-dark:hover,.btn-light:hover,.auth-submit:hover{background:#b0804b;color:#081315}
+.btn-outline{background:#13292d;border-color:#405353;color:#e6e4dc}
+.btn-outline:hover{background:#1a3639}
+.filter{color:#aeb9b3}
+.filter.active,.subtab.active{background:#273b3d;color:#f5e8d7;border-color:#b0804b}
+.filter b{color:#d8c3a9}
+.nav-link.active{background:#1a3436;color:#f0dfc9}
+.nav-link.active .nav-icon,.nav-link:hover .nav-icon{color:#b0804b}
+.nav-link:hover{background:#13292d}
+.section-kicker,.eyebrow{color:#b5b2a6}
+.eyebrow-divider{color:#667772}
+.progress-track,.countdown-line{background:#294044}
+.progress-track span,.countdown-line span,.category-progress i{background:#b0804b}
+.timeline-panel h3,.timeline-panel .countdown,.countdown-units span{color:#f4eee5}
+.countdown-caption,.mini-info{color:#aeb9b3}
+.mini-info b{color:#f1e7d8}
+.workstream,.team-row,.roadmap div{border-color:#294044}
+.workstream>span:first-child,.event-menu button:hover{background:#20383a;color:#d2ad7e}
+.workstream b,.priority-title,.team-row b,.roadmap b{color:#ece8df}
+.workstream small,.team-row span,.roadmap small{color:#a6b2ad}
+.priority-due{background:#3b2b1d;color:#e2b77e}
+.priority-action:hover{background:#1a3538}
+.priority-action.is-overdue .priority-icon{background:#46251e;color:#e4a092}
+.filter-right select,.table-title select,.status-select,.partner-card select,.media-status,.users-panel select{background:#102326;border-color:#345052;color:#e5e2da}
+.table-search,.search-box{background:#102326;border-color:#294044;color:#b2bbb5}
+.table-search input,.search-box input{color:#f3eee6}
+.table-search input::placeholder,.search-box input::placeholder{color:#899994}
+.table-panel{background:#13292d;border-color:#294044}
+thead,.category-group>summary,.partner-category>summary{background:#183236}
+th{color:#aeb9b3;border-color:#315052}
+td{color:#d2d8d3;border-color:#294044}
+tbody tr:hover{background:#183236}
+.pill{background:#20383a;color:#ccd2ca}
+.pill.done,.pill.confirm{background:#203b35;color:#b9d3c7}
+.pill.running,.pill.process,.pill.scheduled{background:#49331f;color:#e8c18f}
+.pill.cancel,.pill.response,.pill.not-delivered{background:#452720;color:#e9a89b}
+.text-button{color:#d1b08b}.text-button:hover{color:#f1d4ae}
+.empty-state,.empty-illustration{background:#13292d;color:#b0804b}
+.subtabs{border-color:#294044}.subtab{color:#aeb9b3}
+.category-group,.partner-category{background:#13292d;border-color:#294044}
+.category-group>summary,.partner-category>summary{color:#f2ede4}
+.category-group>summary:after,.partner-category>summary:after{color:#b0804b}
+.category-group>summary small,.partner-category>summary small,.category-summary{color:#aeb9b3}
+.category-title{color:#f2ede4}.category-summary b{color:#f2ede4}
+.category-progress{background:#345052}
+.partner-card{background:#102326;border-color:#294044}
+.partner-card p,.cell-sub{color:#aeb9b3}
+.media-date-block{background:#102326;border-color:#345052}
+.media-date-block b,.media-upcoming-copy b{color:#f2ede4}
+.media-date-block small,.media-upcoming-copy span,.media-upcoming-empty{color:#aeb9b3}
+.ticket-progress-head>b{color:#b0804b}
+.ticket-progress-panel .progress-track span{background:#b0804b}
+.volunteer-panel .progress-track{background:#345052}.volunteer-panel .progress-track span{background:#b0804b}
+.volunteer-role{background:#102326;border-color:#345052;color:#d1d6cf}.volunteer-role b{color:#f2ede4}
+.event-menu,dialog{background:#13292d;border-color:#345052;color:#f2ede4}
+.event-menu button{color:#e6e4dc}.event-menu button:hover{background:#20383a}
+.dialog h2,dialog h2{color:#f3eee6}
+.field-label,.field span{color:#b2bbb5}
+.field input,.field select,.field textarea{background:#102326;border-color:#345052;color:#f3eee6}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#b0804b}
+.password-toggle{color:#b7a58f}.password-toggle:hover,.password-toggle:focus-visible{color:#ddb989;background:#20383a}
+.auth-gate{background:#081315ed}.auth-card{background:#13292d;border-color:#345052;color:#f3eee6}.auth-mark{background:#20383a}.auth-card h1{color:#f3eee6}.auth-card p{color:#aeb9b3}.auth-foot{border-color:#294044;color:#aeb9b3}.auth-card .section-kicker{color:#b0804b}
+.local-auth-note{background:#20383a;border-color:#345052;color:#d1c1a9}
+.add-detail-button{background:#20383a;border-color:#45605e;color:#e2c5a2}.add-detail-button:hover{background:#294548}
+.toast{background:#13292d;border:1px solid #345052;color:#f3eee6}
+@media(max-width:560px){.filter.active{background:#273b3d}}
