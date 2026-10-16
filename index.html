@@ -90,11 +90,11 @@
 
   <button id="aiChatButton" class="ai-chat-button hidden" type="button" aria-label="Buka Hive AI" title="Hive AI" aria-expanded="false" aria-controls="hiveAiPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.75 6.1 6.45.7-4.8 4.35 1.32 6.35L12 17.05l-5.72 3.25 1.32-6.35L2.8 9.6l6.45-.7L12 2.8Z"/></svg></button>
   <aside id="hiveAiPanel" class="hive-ai-panel hidden" aria-labelledby="hiveAiTitle" aria-hidden="true">
-    <div class="hive-ai-header"><div class="hive-ai-mark" aria-hidden="true">✳</div><div class="hive-ai-heading"><strong id="hiveAiTitle">HIVE AI</strong><small>Event workspace assistant</small></div><button id="hiveAiClose" type="button" aria-label="Tutup Hive AI">×</button></div>
+    <div class="hive-ai-header"><div class="hive-ai-mark" aria-hidden="true">✳</div><div class="hive-ai-heading"><strong id="hiveAiTitle">HIVE AI</strong><small>Local dashboard assistant</small></div><button id="hiveAiClose" type="button" aria-label="Tutup Hive AI">×</button></div>
     <div id="hiveAiMessages" class="hive-ai-messages" aria-live="polite" aria-relevant="additions text"></div>
     <div class="hive-ai-suggestions" id="hiveAiSuggestions"><button type="button" data-ai-question="Task apa yang perlu perhatian?">Task prioritas</button><button type="button" data-ai-question="Bagaimana status sponsor?">Sponsor</button><button type="button" data-ai-question="Apa jadwal media berikutnya?">Media schedule</button></div>
     <form id="hiveAiForm" class="hive-ai-form"><input id="hiveAiInput" type="text" autocomplete="off" placeholder="Tanya tentang event ini..." aria-label="Pesan untuk Hive AI"><button type="submit" aria-label="Kirim pesan">↑</button></form>
-    <div class="hive-ai-note">Jawaban dibatasi pada data event aktif.</div>
+    <div class="hive-ai-note">Data event aktif saja · percakapan tetap di browser ini.</div>
   </aside>
   <div id="printReport" class="print-sheet" aria-hidden="true"></div><div id="printChecklistSheet" class="print-sheet" aria-hidden="true"></div>
   <dialog id="modal"><form method="dialog" id="modalForm"><button class="modal-close" value="cancel" aria-label="Tutup">×</button><div class="section-kicker" id="modalKicker">EDIT EVENT</div><h2 id="modalTitle">Atur informasi event</h2><div id="modalFields"></div><div class="modal-actions"><button class="btn btn-outline" value="cancel">Batal</button><button class="btn btn-dark" id="modalSubmit" value="save">Simpan perubahan</button></div></form></dialog>
