@@ -144,4 +144,6 @@ tbody tr:hover{background:#183236}
 .team-edit-button{border:1px solid #345052;border-radius:6px;background:#102326;color:#d1b08b;padding:5px 8px;font:9px 'DM Mono';opacity:.7}
 .team-row:hover .team-edit-button,.team-edit-button:focus-visible{opacity:1}
 .team-edit-button:disabled{opacity:.35;cursor:not-allowed}
+.event-menu-row{display:flex;align-items:center;gap:4px}.event-menu-row .event-option{flex:1;min-width:0}.event-menu-row .event-delete{width:32px;flex:none;text-align:center;padding:7px 0;color:#e79a76;border:1px solid transparent;font-size:18px;line-height:1}.event-menu-row .event-delete:hover{background:#442d27;border-color:#704738;color:#ffc09d}
+.confirm-delete-dialog{width:min(430px,calc(100% - 32px));padding:0;border:1px solid #704738;border-radius:14px;background:#13292d;color:#f2ede4;box-shadow:0 28px 80px #0009}.confirm-delete-dialog::backdrop{background:#050908bb;backdrop-filter:blur(4px)}.confirm-delete-content{padding:27px}.confirm-delete-content h2{margin:8px 0 10px;font:600 23px 'Space Grotesk';color:#f4eee5}.confirm-delete-content p{margin:0;color:#b9b8ad;font-size:13px;line-height:1.65}.confirm-delete-content p strong{color:#fff0df}.btn-danger{background:#a94f2e;border:1px solid #c46a43;color:#fff3e9}.btn-danger:hover{background:#bd5d36}
 @media(max-width:560px){.filter.active{background:#273b3d}}
