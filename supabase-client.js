@@ -45,7 +45,18 @@
     }
   }
   async function signUp(email, password, name) {
-    return auth('signup', { email, password, data: { full_name: name } });
+    // GitHub Pages is hosted under a repository path. Tell Supabase exactly
+    // where to return after email confirmation instead of relying on a
+    // potentially stale Site URL from the project defaults.
+    let redirectTo = '';
+    if (window.location.protocol !== 'file:') {
+      const pathname = window.location.pathname.endsWith('/')
+        ? window.location.pathname
+        : `${window.location.pathname}/`;
+      redirectTo = `${window.location.origin}${pathname}`;
+    }
+    const endpoint = redirectTo ? `signup?redirect_to=${encodeURIComponent(redirectTo)}` : 'signup';
+    return auth(endpoint, { email, password, data: { full_name: name } });
   }
   async function signIn(email, password) {
     return auth('token?grant_type=password', { email, password });
