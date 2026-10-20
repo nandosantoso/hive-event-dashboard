@@ -173,3 +173,5 @@ tbody tr:hover{background:#183236}
  body.print-rundown-mode #printRundownSheet{display:block!important}
  .print-rundown-day{break-inside:avoid;page-break-inside:avoid;margin:14px 0 18px}.print-rundown-day h2{font:700 13pt Georgia,serif;color:#13292d;border-bottom:1px solid #d8d9d5;padding-bottom:6px;margin:0 0 7px}.print-rundown-day h2 small{float:right;color:#65706a;font:8pt Arial,sans-serif;margin-top:4px}.print-rundown-table{width:100%;border-collapse:collapse;font-size:9pt}.print-rundown-table th{background:#13292d!important;color:#fff!important;text-align:left;padding:7px}.print-rundown-table td{border-bottom:1px solid #d9dcd7;padding:8px 7px;vertical-align:top}.print-rundown-table td:first-child{white-space:nowrap;color:#664021}
 }
+
+.auth-card #authMessage.auth-message-error{padding:12px 14px;border:1px solid rgba(210,126,104,.42);border-radius:8px;background:rgba(98,42,32,.28);color:#f1a08a;font-size:14px;line-height:1.5}
