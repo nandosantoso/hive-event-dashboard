@@ -61,6 +61,14 @@
   async function signIn(email, password) {
     return auth('token?grant_type=password', { email, password });
   }
+  async function resetPassword(email) {
+    const redirectTo = window.location.protocol === 'file:' ? '' : `${window.location.origin}${window.location.pathname.endsWith('/') ? window.location.pathname : `${window.location.pathname}/`}`;
+    const endpoint = redirectTo ? `recover?redirect_to=${encodeURIComponent(redirectTo)}` : 'recover';
+    return request(`/auth/v1/${endpoint}`, { method: 'POST', body: JSON.stringify({ email }) }, false);
+  }
+  async function updatePassword(password) {
+    return request('/auth/v1/user', { method: 'PUT', body: JSON.stringify({ password }) });
+  }
   async function signOut() {
     try { if (session?.access_token) await request('/auth/v1/logout', { method: 'POST' }); }
     finally { setSession(null); }
@@ -97,5 +105,5 @@
     const filter = search ? `&or=(event_name.ilike.*${encodeURIComponent(search)}*,actor_name.ilike.*${encodeURIComponent(search)}*,actor_email.ilike.*${encodeURIComponent(search)}*,action.ilike.*${encodeURIComponent(search)}*,detail.ilike.*${encodeURIComponent(search)}*)` : '';
     return request(`/rest/v1/hive_audit_log?select=id,event_id,event_name,actor_name,actor_email,action,detail,created_at&order=created_at.desc&limit=500${filter}`);
   }
-  window.HiveCloud = { configured, get session(){ return session; }, setSession, currentUser, signUp, signIn, signOut, profile, profiles, updateProfile, invite, workspace, saveWorkspace, addAudit, auditLogs };
+  window.HiveCloud = { configured, get session(){ return session; }, setSession, currentUser, signUp, signIn, resetPassword, updatePassword, signOut, profile, profiles, updateProfile, invite, workspace, saveWorkspace, addAudit, auditLogs };
 })();
