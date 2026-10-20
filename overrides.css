@@ -274,3 +274,19 @@ tbody tr:hover{background:#183236}
 .audit-page-button{min-width:36px;height:36px;padding:0 9px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1}
 .audit-page-controls{gap:7px}
 @media(max-width:560px){.partner-card{padding:14px}.partner-card>p{min-height:0}.partner-values{gap:10px 12px}.partner-values>.text-button,.partner-values>.proposal-download{padding:8px 9px;font-size:11px}}
+
+
+/* Task table: dedicated mention column and actions after status. */
+.nav-icon{display:inline-grid;place-items:center;flex:0 0 24px;width:24px;height:24px;font-size:18px;line-height:1;font-variant-emoji:text}
+.category-group .table-wrap{overflow-x:auto}
+.category-group table{width:100%;min-width:860px;table-layout:fixed}
+.category-group th:nth-child(1),.category-group td:nth-child(1){width:23%}
+.category-group th:nth-child(2),.category-group td:nth-child(2){width:15%;text-align:center}
+.category-group th:nth-child(3),.category-group td:nth-child(3){width:12%}
+.category-group th:nth-child(4),.category-group td:nth-child(4){width:21%}
+.category-group th:nth-child(5),.category-group td:nth-child(5){width:13%}
+.category-group th:nth-child(6),.category-group td:nth-child(6){width:16%;text-align:right}
+.task-tag-list{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:5px;min-height:24px}
+.task-row-actions{display:flex;justify-content:flex-end;align-items:center;gap:12px;white-space:nowrap}
+.task-row-action{padding:5px 0;font-size:11px}
+@media(max-width:720px){.category-group table{min-width:860px}}
