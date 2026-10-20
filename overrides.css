@@ -290,3 +290,20 @@ tbody tr:hover{background:#183236}
 .task-row-actions{display:flex;justify-content:flex-end;align-items:center;gap:12px;white-space:nowrap}
 .task-row-action{padding:5px 0;font-size:11px}
 @media(max-width:720px){.category-group table{min-width:860px}}
+
+
+/* Task actions reserve a stable, wide column; comment count sits outside its button. */
+.category-group table{min-width:980px}
+.category-group th:nth-child(1),.category-group td:nth-child(1){width:22%}
+.category-group th:nth-child(2),.category-group td:nth-child(2){width:13%}
+.category-group th:nth-child(3),.category-group td:nth-child(3){width:10%}
+.category-group th:nth-child(4),.category-group td:nth-child(4){width:18%}
+.category-group th:nth-child(5),.category-group td:nth-child(5){width:14%}
+.category-group th:nth-child(6),.category-group td:nth-child(6){width:23%}
+.category-group td:nth-child(5) .status-select{width:100%;min-width:100px;max-width:136px}
+.task-row-actions{min-width:190px;gap:14px;flex-wrap:nowrap;justify-content:flex-end}
+.task-row-actions .task-row-action{flex:0 0 auto;min-width:50px;text-align:center;white-space:nowrap}
+.task-comment-action{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;white-space:nowrap}
+.task-comment-action .task-row-action{min-width:88px}
+.task-comment-count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border:1px solid #45605e;border-radius:999px;background:#20383a;color:#f0c18f;font:600 10px 'DM Mono',monospace;line-height:1}
+@media(max-width:720px){.category-group table{min-width:980px}.task-row-actions{min-width:190px;gap:12px}}
