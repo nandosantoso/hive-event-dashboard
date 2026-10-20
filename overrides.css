@@ -175,3 +175,5 @@ tbody tr:hover{background:#183236}
 }
 
 .auth-card #authMessage.auth-message-error{padding:12px 14px;border:1px solid rgba(210,126,104,.42);border-radius:8px;background:rgba(98,42,32,.28);color:#f1a08a;font-size:14px;line-height:1.5}
+
+.auth-forgot-button{display:block;margin:10px auto 0;padding:4px 8px;border:0;background:transparent;color:#c08c59;font:500 13px "DM Sans",sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.auth-forgot-button:hover{color:#edc08f}.auth-forgot-button.hidden{display:none}
