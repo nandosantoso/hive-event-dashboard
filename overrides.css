@@ -330,3 +330,16 @@ tbody tr:hover{background:#183236}
 .sidebar .nav::-webkit-scrollbar{width:5px}
 .sidebar .nav::-webkit-scrollbar-thumb{background:#345052;border-radius:8px}
 .sidebar-bottom{flex:0 0 auto;margin-top:12px;padding-bottom:8px}
+
+
+/* Community and KOL tables reserve enough room for separate Edit/Delete controls. */
+#communityView .table-wrap,#kolView .table-wrap{overflow-x:auto}
+#communityView table{width:100%;min-width:900px;table-layout:fixed}
+#kolView table{width:100%;min-width:1120px;table-layout:fixed}
+#communityView th:last-child,#communityView td:last-child{width:150px;min-width:150px}
+#kolView th:last-child,#kolView td:last-child{width:156px;min-width:156px}
+#communityView td:last-child,#kolView td:last-child{white-space:nowrap}
+.community-edit-button,.community-delete-button{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 8px;margin:0;line-height:1;white-space:nowrap;vertical-align:middle}
+.community-edit-button{width:52px;min-width:52px}
+.community-delete-button{width:64px;min-width:64px;margin-left:8px}
+@media(max-width:720px){#communityView table{min-width:900px}#kolView table{min-width:1120px}}
