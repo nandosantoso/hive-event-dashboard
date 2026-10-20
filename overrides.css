@@ -201,3 +201,21 @@ tbody tr:hover{background:#183236}
 .partner-tier-badge.tier-platinum{background:#273235;border-color:#66777a;color:#e1e5df}
 .partner-tier-badge.tier-gold{background:#3b3020;border-color:#8d663e;color:#e5bd8c}
 .partner-tier-badge.tier-silver{background:#2d3332;border-color:#69716c;color:#d0d4ce}
+
+/* Keep the task actions below the title so they don't consume a table column. */
+.category-group .table-wrap{width:100%;max-width:100%;overflow-x:auto}
+.category-group table{width:100%;min-width:0;table-layout:fixed;white-space:normal}
+.category-group th:nth-child(1),.category-group td:nth-child(1){width:34%}
+.category-group th:nth-child(2),.category-group td:nth-child(2){width:15%}
+.category-group th:nth-child(3),.category-group td:nth-child(3){width:28%}
+.category-group th:nth-child(4),.category-group td:nth-child(4){width:23%}
+.category-group th{white-space:normal;line-height:1.25}
+.category-group td{overflow-wrap:anywhere}
+.category-group td:nth-child(2){white-space:nowrap}
+.task-title-cell{display:flex;flex-direction:column;align-items:flex-start;gap:5px;width:100%;min-width:0}
+.task-title-cell>.item-name{width:100%;line-height:1.35}
+.task-tag-list,.task-row-actions{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:4px 10px;min-width:0;margin:0}
+.task-row-actions{grid-column:auto;grid-row:auto;align-self:auto;white-space:normal}
+.task-row-action{font-size:10px;line-height:1.25;padding:2px 0}
+.category-group td:last-child .status-select{width:100%;min-width:0;max-width:120px}
+@media(max-width:560px){.category-group table{min-width:620px}.category-group th,.category-group td{padding-left:9px;padding-right:9px}.task-row-actions{gap:4px 8px}}
