@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261020-inbox">
+  <link rel="stylesheet" href="styles.css?v=20261020-chat-notice">
   <link rel="stylesheet" href="overrides.css?v=20261020-task-alignment-2">
   <link rel="stylesheet" href="management.css?v=20261016-16">
 </head>
@@ -102,9 +102,9 @@
   <dialog id="modal"><form method="dialog" id="modalForm" novalidate><button class="modal-close" value="cancel" formnovalidate aria-label="Tutup">×</button><div class="section-kicker" id="modalKicker">EDIT EVENT</div><h2 id="modalTitle">Atur informasi event</h2><div id="modalFields"></div><div class="modal-actions"><button class="btn btn-outline" value="cancel" formnovalidate>Batal</button><button class="btn btn-dark" id="modalSubmit" value="save">Simpan perubahan</button></div></form></dialog>
   <dialog id="deleteEventDialog" class="confirm-delete-dialog" aria-labelledby="deleteEventTitle"><div class="confirm-delete-content"><div class="section-kicker">EVENT WORKSPACE</div><h2 id="deleteEventTitle">Hapus event?</h2><p>Yakin ingin menghapus <strong id="deleteEventName"></strong>? Semua task, sponsor, dan data lain di event ini akan ikut terhapus.</p><div class="modal-actions"><button class="btn btn-outline" id="cancelDeleteEvent" type="button">Batal</button><button class="btn btn-danger" id="confirmDeleteEvent" type="button">Ya, hapus event</button></div></div></dialog>
   <div id="authGate" class="auth-gate hidden"><form id="authForm" class="auth-card"><div class="brand-mark auth-mark">H<span>✳</span></div><div class="section-kicker">HIVE EVENT DASHBOARD</div><h1 id="authTitle">Masuk ke workspace</h1><p id="authMessage" role="status" aria-live="polite">Masuk untuk mengelola event dan melihat activity log.</p><div id="authFields"></div><button class="btn btn-dark auth-submit" id="authSubmit" type="submit">Masuk</button><button id="forgotPasswordButton" class="auth-forgot-button" type="button">Lupa password?</button><button id="authModeToggle" class="auth-mode-toggle" type="button">Belum punya akun? Buat akun</button><div class="auth-foot">Secure workspace login · shared across devices</div></form></div>
-  <div id="toast" class="toast" role="status"></div>
+  <aside id="chatNotification" class="chat-notification hidden" role="alert" aria-live="assertive"><div class="chat-notification-head"><strong>New message</strong><button id="closeChatNotification" type="button" aria-label="Close notification">×</button></div><p id="chatNotificationText"></p><button id="openChatInbox" class="text-button" type="button">Open inbox →</button></aside><div id="toast" class="toast" role="status"></div>
   <script src="supabase-config.js?v=20261019-4"></script>
   <script src="supabase-client.js?v=20261020-forgot-password"></script>
-  <script src="app.js?v=20261020-inbox-sync"></script>
+  <script src="app.js?v=20261020-chat-notice"></script>
 </body>
 </html>
