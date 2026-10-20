@@ -219,3 +219,7 @@ tbody tr:hover{background:#183236}
 .task-row-action{font-size:10px;line-height:1.25;padding:2px 0}
 .category-group td:last-child .status-select{width:100%;min-width:0;max-width:120px}
 @media(max-width:560px){.category-group table{min-width:620px}.category-group th,.category-group td{padding-left:9px;padding-right:9px}.task-row-actions{gap:4px 8px}}
+
+.community-delete-button{color:#e19a8a}
+.community-delete-button:hover,.community-delete-button:focus-visible{color:#ffc0ae}
+.community-edit-button,.community-delete-button{padding:4px 5px;white-space:nowrap}
