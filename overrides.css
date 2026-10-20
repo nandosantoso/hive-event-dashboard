@@ -195,3 +195,9 @@ tbody tr:hover{background:#183236}
 .category-group td:nth-child(2),.category-group td:nth-child(3){overflow-wrap:anywhere;line-height:1.45}
 .category-group td:last-child .status-select{display:block;min-width:104px;max-width:100%;margin:0}
 @media(max-width:720px){.category-group .table-wrap{overflow-x:auto}.category-group table{min-width:680px}.task-title-cell{grid-template-columns:minmax(0,1fr) auto}}
+
+.partner-tier-badge{display:inline-flex;align-items:center;margin:5px 0 0 7px;padding:3px 8px;border:1px solid #5a4934;border-radius:999px;background:#35291d;color:#e5bd8c;font:500 9px 'DM Mono',monospace;letter-spacing:.45px;vertical-align:middle;white-space:nowrap}
+.partner-tier-badge.tier-title-sponsor{background:#3b3020;border-color:#b0804b;color:#f0c48f}
+.partner-tier-badge.tier-platinum{background:#273235;border-color:#66777a;color:#e1e5df}
+.partner-tier-badge.tier-gold{background:#3b3020;border-color:#8d663e;color:#e5bd8c}
+.partner-tier-badge.tier-silver{background:#2d3332;border-color:#69716c;color:#d0d4ce}
