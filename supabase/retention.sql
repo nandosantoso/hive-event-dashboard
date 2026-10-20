@@ -92,30 +92,43 @@ create trigger hive_audit_retention
 after insert on public.hive_audit_log
 for each row execute function public.hive_audit_retention_trigger();
 
--- Admins can also run an immediate cleanup when they open the workspace.
+-- Internal cleanup is only callable by the scheduled database job and admin wrapper.
+create or replace function public.hive_cleanup_expired_data_internal()
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare v_cutoff timestamptz := now() - interval '7 days';
+begin
+  delete from public.hive_audit_log where created_at < v_cutoff;
+  update public.hive_workspace
+  set events = public.hive_prune_messages_from_events(events, v_cutoff),
+      updated_at = now(),
+      updated_by = coalesce(auth.uid(), updated_by)
+  where id = 'main'
+    and events is distinct from public.hive_prune_messages_from_events(events, v_cutoff);
+end;
+$$;
+revoke all on function public.hive_cleanup_expired_data_internal() from public, anon, authenticated;
+
+-- Admins can run cleanup immediately; the hourly job uses the private function above.
 create or replace function public.hive_prune_expired_data()
 returns void
 language plpgsql
 security definer
 set search_path = public
 as $$
-declare
-  v_cutoff timestamptz := now() - interval '7 days';
 begin
-  if not public.hive_is_admin() then
-    raise exception 'Workspace admin required';
-  end if;
-
-  delete from public.hive_audit_log where created_at < v_cutoff;
-
-  update public.hive_workspace
-  set events = public.hive_prune_messages_from_events(events, v_cutoff),
-      updated_at = now(),
-      updated_by = auth.uid()
-  where id = 'main'
-    and events is distinct from public.hive_prune_messages_from_events(events, v_cutoff);
+  if not public.hive_is_admin() then raise exception 'Workspace admin required'; end if;
+  perform public.hive_cleanup_expired_data_internal();
 end;
 $$;
-
-grant execute on function public.hive_prune_messages_from_events(jsonb,timestamptz) to authenticated;
+revoke all on function public.hive_prune_expired_data() from public, anon;
 grant execute on function public.hive_prune_expired_data() to authenticated;
+grant execute on function public.hive_prune_messages_from_events(jsonb,timestamptz) to authenticated;
+
+-- Enable Supabase Cron if needed, then create the hourly retention job.
+create extension if not exists pg_cron with schema pg_catalog;
+select cron.unschedule(jobid) from cron.job where jobname='hive-seven-day-retention';
+select cron.schedule('hive-seven-day-retention','0 * * * *','select public.hive_cleanup_expired_data_internal()');
