@@ -57,6 +57,42 @@ as $$
   from jsonb_array_elements(case when jsonb_typeof(p_events)='array' then p_events else '[]'::jsonb end) with ordinality as e(ev,event_ord);
 $$;
 
+-- Keep old Inbox messages and comments from accumulating on each workspace write.
+create or replace function public.hive_workspace_retention_trigger()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  new.events := public.hive_prune_messages_from_events(new.events, now() - interval '7 days');
+  return new;
+end;
+$$;
+
+drop trigger if exists hive_workspace_retention on public.hive_workspace;
+create trigger hive_workspace_retention
+before insert or update of events on public.hive_workspace
+for each row execute function public.hive_workspace_retention_trigger();
+
+-- Purge expired audit entries whenever a new activity is written.
+create or replace function public.hive_audit_retention_trigger()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  delete from public.hive_audit_log where created_at < now() - interval '7 days';
+  return new;
+end;
+$$;
+
+drop trigger if exists hive_audit_retention on public.hive_audit_log;
+create trigger hive_audit_retention
+after insert on public.hive_audit_log
+for each row execute function public.hive_audit_retention_trigger();
+
+-- Admins can also run an immediate cleanup when they open the workspace.
 create or replace function public.hive_prune_expired_data()
 returns void
 language plpgsql
@@ -66,8 +102,8 @@ as $$
 declare
   v_cutoff timestamptz := now() - interval '7 days';
 begin
-  if not public.hive_is_active() then
-    raise exception 'Active workspace profile required';
+  if not public.hive_is_admin() then
+    raise exception 'Workspace admin required';
   end if;
 
   delete from public.hive_audit_log where created_at < v_cutoff;
