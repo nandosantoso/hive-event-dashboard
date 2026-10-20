@@ -101,9 +101,13 @@
       method: 'POST', body: JSON.stringify({ p_event_id: eventId, p_event_name: eventName, p_action: action, p_detail: detail })
     });
   }
+  async function pruneExpired() {
+    return request('/rest/v1/rpc/hive_prune_expired_data', { method: 'POST', body: '{}' });
+  }
   async function auditLogs(search = '') {
     const filter = search ? `&or=(event_name.ilike.*${encodeURIComponent(search)}*,actor_name.ilike.*${encodeURIComponent(search)}*,actor_email.ilike.*${encodeURIComponent(search)}*,action.ilike.*${encodeURIComponent(search)}*,detail.ilike.*${encodeURIComponent(search)}*)` : '';
-    return request(`/rest/v1/hive_audit_log?select=id,event_id,event_name,actor_name,actor_email,action,detail,created_at&order=created_at.desc&limit=500${filter}`);
+    const cutoff = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    return request(`/rest/v1/hive_audit_log?select=id,event_id,event_name,actor_name,actor_email,action,detail,created_at&created_at=gte.${encodeURIComponent(cutoff)}&order=created_at.desc&limit=500${filter}`);
   }
-  window.HiveCloud = { configured, get session(){ return session; }, setSession, currentUser, signUp, signIn, resetPassword, updatePassword, signOut, profile, profiles, updateProfile, invite, workspace, saveWorkspace, addAudit, auditLogs };
+  window.HiveCloud = { configured, get session(){ return session; }, setSession, currentUser, signUp, signIn, resetPassword, updatePassword, signOut, profile, profiles, updateProfile, invite, workspace, saveWorkspace, addAudit, pruneExpired, auditLogs };
 })();
