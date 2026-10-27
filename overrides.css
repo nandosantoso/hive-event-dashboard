@@ -333,24 +333,18 @@ tbody tr:hover{background:#183236}
 
 
 /* Community and KOL tables reserve enough room for separate Edit/Delete controls. */
-#communityView .table-wrap,#kolView .table-wrap{overflow-x:auto}
+#communityView .table-wrap,#kolView .table-wrap{overflow-x:auto;max-width:100%}
 #communityView table{width:100%;min-width:900px;table-layout:fixed}
-#kolView table{width:100%;min-width:1120px;max-width:100%;table-layout:fixed}
+#kolView table{width:100%!important;min-width:0!important;max-width:100%;table-layout:fixed}
 #communityView th:last-child,#communityView td:last-child{width:150px;min-width:150px}
-#kolView th:nth-child(1),#kolView td:nth-child(1){width:17%}
-#kolView th:nth-child(2),#kolView td:nth-child(2){width:14%}
-#kolView th:nth-child(3),#kolView td:nth-child(3){width:8%}
-#kolView th:nth-child(4),#kolView td:nth-child(4){width:14%}
-#kolView th:nth-child(5),#kolView td:nth-child(5){width:16%}
-#kolView th:nth-child(6),#kolView td:nth-child(6){width:17%}
-#kolView th:last-child,#kolView td:last-child{width:14%;min-width:160px}
+#kolView th:last-child,#kolView td:last-child{width:190px;min-width:190px}
 #communityView td:last-child{white-space:nowrap}
 #kolView td:nth-child(6){white-space:normal;overflow-wrap:anywhere}
 .community-edit-button,.community-delete-button{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;height:34px;padding:0 8px;margin:0;line-height:1;white-space:nowrap;vertical-align:middle}
 .community-edit-button{width:52px;min-width:52px}
 .community-delete-button{width:64px;min-width:64px;margin-left:8px}
-@media(max-width:720px){#communityView table{min-width:900px}#kolView table{min-width:1200px}}
-#kolView .creator-actions{display:flex;align-items:center;justify-content:flex-start;gap:8px;min-width:150px;white-space:nowrap}
+@media(max-width:720px){#communityView table{min-width:900px}#kolView table{min-width:900px!important}}
+#kolView .creator-actions{display:flex;align-items:center;justify-content:flex-start;gap:8px;min-width:0;white-space:nowrap}
 #kolView .creator-actions .community-edit-button{width:56px;min-width:56px}
 #kolView .creator-actions .community-delete-button{width:72px;min-width:72px;margin-left:0}
 
