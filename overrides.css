@@ -526,3 +526,9 @@ tbody tr:hover{background:#183236}
  .auth-gate:not(.hidden) .auth-mark{width:42px;height:42px;margin-bottom:12px}
  .auth-gate:not(.hidden) .auth-card p{margin-bottom:12px}
 }
+
+@media(max-width:760px){
+ .auth-gate:not(.hidden){background-position:28% center}
+ .auth-gate:not(.hidden)::before{background:rgba(2,10,12,.24)}
+ .auth-gate:not(.hidden) .auth-card{background:rgba(5,17,19,.76);backdrop-filter:blur(12px);box-shadow:0 20px 60px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.05)}
+}
