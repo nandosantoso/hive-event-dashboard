@@ -442,3 +442,35 @@ tbody tr:hover{background:#183236}
 .users-panel .last-login-cell time{white-space:nowrap;color:#e7e5df}
 .users-panel .last-login-empty{display:block;max-width:210px;color:#aeb9b3;font-size:.9em}
 .local-auth-note{line-height:1.5;color:#aeb9b3}
+
+
+/* Budget row actions stay visible on narrow screens. */
+#page-budget .budget-table th:nth-child(1){width:18%}
+#page-budget .budget-table th:nth-child(2){width:12%}
+#page-budget .budget-table th:nth-child(3){width:8%}
+#page-budget .budget-table th:nth-child(4){width:13%}
+#page-budget .budget-table th:nth-child(5){width:13%}
+#page-budget .budget-table th:nth-child(6){width:18%}
+#page-budget .budget-table th:nth-child(7){width:18%}
+#page-budget .budget-actions{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:8px;white-space:nowrap}
+#page-budget .budget-actions .text-button{box-sizing:border-box;min-width:70px;min-height:38px;padding:8px 12px;border:1px solid #405353;border-radius:10px;text-align:center;line-height:1.2}
+@media(max-width:900px){
+ #page-budget .budget-table-scroll{overflow:visible}
+ #page-budget .budget-table{display:block!important;width:100%!important;min-width:0!important;table-layout:auto!important}
+ #page-budget .budget-table thead{display:none}
+ #page-budget .budget-table tbody{display:grid;gap:12px;padding:12px}
+ #page-budget .budget-table tbody tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px;padding:10px;border:1px solid #294044;border-radius:12px;background:#102326}
+ #page-budget .budget-table tbody td{display:block;min-width:0;padding:8px 6px;border:0;white-space:normal;overflow-wrap:anywhere}
+ #page-budget .budget-table tbody td:nth-child(1),#page-budget .budget-table tbody td:nth-child(6),#page-budget .budget-table tbody td:nth-child(7),#page-budget .budget-table tbody td[colspan]{grid-column:1/-1}
+ #page-budget .budget-table tbody td:nth-child(1):before,#page-budget .budget-table tbody td:nth-child(2):before,#page-budget .budget-table tbody td:nth-child(3):before,#page-budget .budget-table tbody td:nth-child(4):before,#page-budget .budget-table tbody td:nth-child(5):before,#page-budget .budget-table tbody td:nth-child(6):before,#page-budget .budget-table tbody td:nth-child(7):before{display:block;margin-bottom:5px;color:#aeb9b3;font:9px 'DM Mono';letter-spacing:.7px}
+ #page-budget .budget-table tbody td:nth-child(1):before{content:'ITEM'}
+ #page-budget .budget-table tbody td:nth-child(2):before{content:'CATEGORY'}
+ #page-budget .budget-table tbody td:nth-child(3):before{content:'QTY'}
+ #page-budget .budget-table tbody td:nth-child(4):before{content:'UNIT COST'}
+ #page-budget .budget-table tbody td:nth-child(5):before{content:'TOTAL'}
+ #page-budget .budget-table tbody td:nth-child(6):before{content:'DETAILS'}
+ #page-budget .budget-table tbody td:nth-child(7):before{content:'ACTIONS'}
+ #page-budget .budget-actions{display:flex;flex-wrap:wrap;gap:8px;width:100%}
+ #page-budget .budget-actions .text-button{flex:1 1 90px;min-width:0;min-height:42px;padding:9px 12px;font-size:13px}
+}
+@media(max-width:480px){#page-budget .budget-table tbody{padding:8px}#page-budget .budget-table tbody tr{padding:8px;gap:2px 8px}}
