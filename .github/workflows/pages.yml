@@ -28,7 +28,7 @@ jobs:
       - name: Prepare site files
         run: |
           mkdir _site
-          cp index.html app.js styles.css overrides.css management.css supabase-client.js supabase-config.js .nojekyll _site/
+          cp index.html app.js styles.css overrides.css management.css supabase-client.js supabase-config.js login-visual.svg .nojekyll _site/
       - name: Upload app files
         uses: actions/upload-pages-artifact@v3
         with:
