@@ -10,26 +10,26 @@
  font:600 12px 'DM Sans',sans-serif;line-height:1.2;text-decoration:none;
  transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease
 }
-.btn-dark,.btn-light,.auth-submit{background:#62d8ce;border-color:#62d8ce;color:#062022}
-.btn-dark:hover,.btn-light:hover,.auth-submit:hover{background:#62d8ce;border-color:#62d8ce;color:#081315;transform:translateY(-1px)}
-.btn-outline{background:#13292d;border-color:#405353;color:#e6e4dc}
-.btn-outline:hover{background:#1a3639;border-color:#56716f;color:#fff}
+.btn-dark,.btn-light,.auth-submit{background:#fbab4a;border-color:#fbab4a;color:#200908}
+.btn-dark:hover,.btn-light:hover,.auth-submit:hover{background:#fbab4a;border-color:#fbab4a;color:#160c07;transform:translateY(-1px)}
+.btn-outline{background:#2e1a12;border-color:#54453f;color:#e6e4dc}
+.btn-outline:hover{background:#3b2318;border-color:#725e55;color:#fff}
 .btn-danger{border-radius:10px}
 .btn:focus-visible,.auth-submit:focus-visible,.text-button:focus-visible,.logout-button:focus-visible,.direct-message-toggle:focus-visible{outline:2px solid #d5a16a;outline-offset:2px}
-.text-button{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:6px 10px;border:1px solid #405353;border-radius:8px;background:#13292d;color:#d1b08b;line-height:1.2;text-decoration:none;transition:background .16s ease,border-color .16s ease,color .16s ease}
-.text-button:hover{background:#20383a;border-color:#61716a;color:#c6fffa}
+.text-button{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:6px 10px;border:1px solid #54453f;border-radius:8px;background:#2e1a12;color:#d1b08b;line-height:1.2;text-decoration:none;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.text-button:hover{background:#3b271f;border-color:#61716a;color:#ffe0b8}
 .inbox-delete{border-color:#65423d!important;background:#271c19!important;color:#e4a092!important}
 .inbox-delete:hover{background:#3a2521!important;border-color:#9a5e50!important;color:#fff0e9!important}
 .top-actions .user-avatar,.direct-message-toggle,.sidebar-bottom .side-avatar{
  width:40px;height:40px;flex:none;display:grid;place-items:center;
- border:1px solid #405353;border-radius:13px;background:#13292d;color:#d0a06a;
+ border:1px solid #54453f;border-radius:13px;background:#2e1a12;color:#d0a06a;
  box-shadow:inset 0 1px 0 #ffffff0a
 }
 .top-actions .user-avatar{font:600 13px 'DM Mono',monospace}
 .direct-message-toggle{position:relative;font-size:0;line-height:1;cursor:pointer;transition:background .16s ease,border-color .16s ease,transform .16s ease}
 .direct-message-toggle svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.direct-message-toggle:hover,.direct-message-toggle:focus-visible{background:#20383a;border-color:#62d8ce;transform:translateY(-1px)}
-.direct-message-toggle.has-unread{border-color:#62d8ce;background:#14403f}
+.direct-message-toggle:hover,.direct-message-toggle:focus-visible{background:#3b271f;border-color:#fbab4a;transform:translateY(-1px)}
+.direct-message-toggle.has-unread{border-color:#fbab4a;background:#3b110d}
 .sidebar-bottom .side-avatar{font:600 11px 'DM Mono',monospace}
 .logout-button{width:36px;height:36px;border-radius:10px}
 @media(max-width:560px){.top-actions .user-avatar,.direct-message-toggle{width:38px;height:38px;border-radius:12px}.btn,.auth-submit{min-height:38px;padding:9px 12px;font-size:11px}}
