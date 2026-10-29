@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20261020-inbox-thread-grouping">
   <link rel="stylesheet" href="management.css?v=20261020-ui-polish">
-  <link rel="stylesheet" href="overrides.css?v=20261027-rundown-v8">
+  <link rel="stylesheet" href="overrides.css?v=20261029-budget-v1">
 </head>
 <body>
   <div class="app-shell">
@@ -28,6 +28,7 @@
         <div class="nav-caption">EVENT OPERATIONS</div>
         <a href="#tasks" class="nav-link" data-page="tasks"><span class="nav-icon">☷</span> Tasks & production <i id="taskNavCount">0</i></a>
         <a href="#ticketing" class="nav-link" data-page="ticketing"><span class="nav-icon">▤</span> Ticketing</a>
+        <a href="#budget" class="nav-link" data-page="budget"><span class="nav-icon">◈</span> Budgeting</a>
         <a href="#rundown" class="nav-link" data-page="rundown"><span class="nav-icon">◷</span> Rundown</a>
         <a href="#marketing" class="nav-link" data-page="marketing"><span class="nav-icon">◉</span> Marketing & media</a>
         <a href="#partners" class="nav-link" data-page="partners"><span class="nav-icon">◇</span> Sponsors & brands</a>
@@ -73,6 +74,17 @@
 
         <section class="page" id="page-ticketing"><div class="page-heading"><div><div class="eyebrow">EVENT OPERATIONS <span class="eyebrow-divider">/</span> TICKETING</div><h1>Ticketing <em>overview</em></h1><p>Ringkasan performa tiket dan kapasitas peserta.</p></div><button class="btn btn-outline" id="ticketingEdit">✎ Atur kapasitas</button></div><div class="empty-state panel" id="ticketEmpty"><div class="empty-illustration">▤</div><div class="section-kicker">RUANG TICKETING SIAP DIISI</div><h2>Belum ada data penjualan tiket</h2><p>Workbook mencantumkan kategori race 7 KM, tetapi belum memuat kuota, harga, atau penjualan. Tambahkan kapasitas event untuk mulai memantau penjualan.</p><button class="btn btn-dark" id="ticketingStart">＋ Tambah kapasitas tiket</button></div><div id="ticketStats" class="ticket-stats hidden"></div></section>
 
+        <section class="page" id="page-budget">
+          <div class="page-heading"><div><div class="eyebrow">EVENT FINANCE <span class="eyebrow-divider">/</span> BUDGET</div><h1>Event <em>budget</em></h1><p>Catat kebutuhan, biaya satuan, dan total estimasi biaya event.</p></div><button class="btn btn-dark" data-add="budget">＋ Add budget item</button></div>
+          <div class="metric-grid mini-metrics budget-summary">
+            <article class="metric-card metric-dark"><div class="metric-top"><span>ESTIMATED TOTAL</span><span class="metric-icon">↗</span></div><div class="metric-value" id="budgetGrandTotal">Rp 0</div><div class="metric-bottom"><span>Total biaya dari semua item</span></div></article>
+            <article class="metric-card"><div class="metric-top"><span>BUDGET ITEMS</span><span class="metric-icon">▤</span></div><div class="metric-value" id="budgetItemCount">0</div><div class="metric-bottom"><span>Item biaya tercatat</span></div></article>
+            <article class="metric-card"><div class="metric-top"><span>CATEGORIES</span><span class="metric-icon">◈</span></div><div class="metric-value" id="budgetCategoryCount">0</div><div class="metric-bottom"><span>Kategori dengan pengeluaran</span></div></article>
+          </div>
+          <div class="filter-row budget-filter"><span class="section-kicker">RINCIAN ANGGARAN EVENT</span><label class="table-search"><span aria-hidden="true">⌕</span><input id="budgetSearch" type="search" placeholder="Search budget items..." aria-label="Search budget items"></label></div>
+          <div class="panel table-panel budget-table-panel"><div class="panel-heading"><div><span class="section-kicker">COST BREAKDOWN</span><h2>Budget details</h2></div><span class="budget-total-chip">Total <strong id="budgetHeaderTotal">Rp 0</strong></span></div><div class="table-scroll budget-table-scroll"><table class="data-table budget-table"><thead><tr><th>ITEM</th><th>CATEGORY</th><th>QTY</th><th>UNIT COST</th><th>TOTAL</th><th>DETAILS</th><th>ACTIONS</th></tr></thead><tbody id="budgetTable"></tbody></table></div></div>
+        </section>
+
         <section class="page" id="page-rundown"><div class="page-heading"><div><div class="eyebrow">EVENT OPERATIONS <span class="eyebrow-divider">/</span> LIVE SCHEDULE</div><h1>Event <em>rundown</em></h1><p>Susun tanggal, rentang waktu, dan aktivitas untuk seluruh hari event.</p></div><div class="page-actions"><button class="btn btn-outline" id="downloadRundownPdf" title="Pilih Save as PDF pada dialog cetak">↓ Download rundown PDF</button><button class="btn btn-dark" id="addRundownItem">＋ Add schedule</button></div></div><div id="rundownAlerts" class="rundown-alerts"></div><div class="rundown-summary" id="rundownSummary"></div><div class="rundown-days" id="rundownDays"></div></section>
         <section class="page" id="page-marketing"><div class="page-heading"><div><div class="eyebrow">EVENT OPERATIONS <span class="eyebrow-divider">/</span> REACH & CONTENT</div><h1>Marketing <em>& media</em></h1><p>Aktivasi digital, media placement, dan materi publikasi.</p></div><button class="btn btn-dark" data-add="media">＋ Tambah placement</button></div><div class="metric-grid mini-metrics"><article class="metric-card metric-dark"><div class="metric-top"><span>MEDIA BUZZER</span><span class="metric-icon">◉</span></div><div class="metric-value" id="mediaCount">0</div><div class="metric-bottom"><span>placement tercatat</span></div></article><article class="metric-card"><div class="metric-top"><span>TERJADWAL</span><span class="metric-icon">◷</span></div><div class="metric-value" id="scheduledCount">0</div><div class="metric-bottom"><span>posting terjadwal</span></div></article><article class="metric-card"><div class="metric-top"><span>TOTAL RATE</span><span class="metric-icon">↗</span></div><div class="metric-value" id="mediaRateTotal">Rp 0</div><div class="metric-bottom"><span>rate placement tercatat</span></div></article><article class="metric-card"><div class="metric-top"><span>CONTENT TRACKER</span><span class="metric-icon">▤</span></div><div class="metric-value">3<small> fase</small></div><div class="metric-bottom"><span>Teaser · Trial · Event day</span></div></article></div><div class="panel upcoming-media-panel"><div class="panel-heading"><div><span class="section-kicker">PUBLISHING PLAN</span><h3>Jadwal posting</h3></div><span class="table-foot-label">Urut berdasarkan tanggal publikasi</span></div><div id="mediaUpcoming" class="media-upcoming-list"></div></div><div class="panel table-panel"><div class="panel-heading table-title"><div><span class="section-kicker">MEDIA BUZZER</span><h3>Distribution tracker</h3></div><select id="mediaFilter"><option value="all">Semua status</option><option value="scheduled">Terjadwal</option><option value="not delivered">Belum terkirim</option></select></div><div class="table-wrap"><table><thead><tr><th>CHANNEL</th><th>STATUS</th><th>RATE</th><th>JADWAL POST</th><th>LINK</th><th>DETAIL</th></tr></thead><tbody id="mediaTable"></tbody></table></div></div><div class="marketing-lower"><article class="panel"><div class="section-kicker">CONTENT ROADMAP</div><h3>Content post</h3><div class="roadmap"><div><span>01</span><b>Teaser AFTR EVENT</b><small>Build anticipation</small></div><div><span>02</span><b>Trial Class</b><small>Bring the community in</small></div><div><span>03</span><b>The Day</b><small>Capture the moment</small></div></div></article></div></section>
 
@@ -105,6 +117,6 @@
   <aside id="chatNotification" class="chat-notification hidden" role="alert" aria-live="assertive"><div class="chat-notification-head"><strong>New message</strong><button id="closeChatNotification" type="button" aria-label="Close notification">×</button></div><p id="chatNotificationText"></p><button id="openChatInbox" class="text-button" type="button">Open inbox →</button></aside><div id="toast" class="toast" role="status"></div>
   <script src="supabase-config.js?v=20261019-4"></script>
   <script src="supabase-client.js?v=20261020-retention"></script>
-  <script src="app.js?v=20261027-rundown-v8"></script>
+  <script src="app.js?v=20261029-budget-v1"></script>
 </body>
 </html>
