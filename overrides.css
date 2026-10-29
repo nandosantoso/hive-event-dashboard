@@ -359,3 +359,32 @@ tbody tr:hover{background:#183236}
 #gymView .community-edit-button{width:52px;min-width:52px}
 #gymView .community-delete-button{width:64px;min-width:64px;margin-left:8px}
 @media(max-width:720px){#gymView table{min-width:900px}}
+
+
+/* Event budgeting page */
+#page-budget .budget-summary{margin-bottom:24px}
+#page-budget .budget-filter{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 14px}
+#page-budget .budget-filter .section-kicker{margin:0}
+#page-budget .budget-table-panel{overflow:hidden}
+#page-budget .budget-table-panel>.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:18px}
+#page-budget .budget-table-panel>.panel-heading h2{margin:6px 0 0}
+#page-budget .budget-total-chip{display:inline-flex;align-items:center;gap:10px;padding:9px 13px;border:1px solid var(--line,#304b4b);border-radius:12px;color:var(--muted,#a8b2ad);white-space:nowrap}
+#page-budget .budget-total-chip strong{color:var(--text,#f1eee8)}
+#page-budget .budget-table-scroll{overflow-x:auto}
+#page-budget .budget-table{min-width:960px;width:100%;table-layout:fixed}
+#page-budget .budget-table th:nth-child(1){width:18%}
+#page-budget .budget-table th:nth-child(2){width:13%}
+#page-budget .budget-table th:nth-child(3){width:10%}
+#page-budget .budget-table th:nth-child(4){width:14%}
+#page-budget .budget-table th:nth-child(5){width:14%}
+#page-budget .budget-table th:nth-child(6){width:19%}
+#page-budget .budget-table th:nth-child(7){width:12%}
+#page-budget .budget-table td{vertical-align:middle;overflow-wrap:anywhere}
+#page-budget .budget-vendor{display:block;margin-top:5px;color:var(--muted,#a8b2ad);font-size:.88em}
+#page-budget .budget-category{display:inline-flex;padding:5px 9px;border:1px solid var(--line,#304b4b);border-radius:999px;color:var(--muted,#a8b2ad);font-size:.9em}
+#page-budget .budget-details{white-space:normal;color:var(--muted,#a8b2ad);line-height:1.45}
+#page-budget .budget-actions{display:flex;align-items:center;gap:12px;white-space:nowrap}
+#page-budget .budget-empty{text-align:center;padding:32px;color:var(--muted,#a8b2ad)}
+#page-budget .budget-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#page-budget .danger-text{color:#d98977}
+@media(max-width:720px){#page-budget .budget-filter{align-items:stretch;flex-direction:column}#page-budget .budget-form-row{grid-template-columns:1fr;gap:0}#page-budget .budget-table-panel>.panel-heading{align-items:flex-start;flex-direction:column}#page-budget .budget-summary{grid-template-columns:1fr}}
