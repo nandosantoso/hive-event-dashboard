@@ -571,3 +571,13 @@ body{background:radial-gradient(1200px 600px at 85% -10%,rgba(210,87,31,.12),tra
 .nav-group>summary:hover,.nav-group>summary:focus-visible{color:#ffc27a;outline:none;background:rgba(251,171,74,.06)}
 .nav .nav-link{height:34px}
 .nav{overflow-y:auto;min-height:0}
+
+/* Budget pagination */
+.budget-pager{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0;padding:12px 18px;border-top:1px solid rgba(245,160,74,.18)}
+.budget-pager-info{font:11px 'DM Mono';color:#d2b8aa}
+.budget-pager-buttons{display:flex;gap:4px;flex-wrap:wrap}
+.budget-page-btn{min-width:32px;height:30px;padding:0 9px;border:1px solid rgba(245,160,74,.3);border-radius:7px;background:transparent;color:#f5e6dc;font:600 11px 'DM Mono'}
+.budget-page-btn:hover:not(:disabled){background:rgba(251,171,74,.12);color:#ffc27a}
+.budget-page-btn.active{background:#fbab4a;border-color:#fbab4a;color:#200908}
+.budget-page-btn:disabled{opacity:.4;cursor:default}
+.budget-page-btn:focus-visible{outline:2px solid #ffb060;outline-offset:1px}
