@@ -419,3 +419,11 @@ tbody tr:hover{background:#183236}
 @media(max-width:1200px){.topbar{gap:12px;padding-inline:22px}.topbar .breadcrumb{flex-basis:185px}.topbar .top-actions{gap:8px}.topbar .search-box{min-width:120px}.topbar .top-actions>.btn{padding-inline:11px}}
 @media(max-width:900px){#page-budget .budget-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{flex-wrap:wrap;min-height:0}.topbar .breadcrumb{flex:1 1 180px}.topbar .top-actions{flex:1 1 100%;width:100%}.topbar .search-box{max-width:none}}
 @media(max-width:600px){#page-budget .budget-summary{grid-template-columns:1fr}.topbar{padding:12px 16px}.topbar .top-actions{flex-wrap:wrap;justify-content:flex-start}.topbar .search-box{flex:1 1 100%;max-width:none}.topbar .top-actions>.btn{flex:1 1 auto}.topbar .breadcrumb{flex-basis:calc(100% - 60px)}}
+
+
+/* Budget CSV actions */
+#page-budget .budget-page-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:10px;min-width:0}
+#page-budget .budget-page-actions>.btn{white-space:nowrap}
+#page-budget .budget-import-input{display:none}
+@media(max-width:900px){#page-budget .page-heading:has(.budget-page-actions){align-items:flex-start;flex-direction:column;gap:16px}#page-budget .budget-page-actions{justify-content:flex-start;width:100%}}
+@media(max-width:600px){#page-budget .budget-page-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}#page-budget .budget-page-actions>.btn{width:100%;min-width:0;padding-inline:8px}}
