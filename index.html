@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20261029-orange">
   <link rel="stylesheet" href="management.css?v=20261029-orange">
-  <link rel="stylesheet" href="overrides.css?v=20261029-orange">
+  <link rel="stylesheet" href="overrides.css?v=20261029-navgroups">
 </head>
 <body>
   <div class="app-shell">
@@ -23,19 +23,31 @@
       <div id="eventMenu" class="event-menu hidden"></div>
       <div class="event-chip"><span class="live-dot"></span><span id="sidebarEventName">AFTR DARK</span><small>2026</small></div>
       <nav class="nav">
-        <div class="nav-caption">OVERVIEW</div>
-        <a href="#overview" class="nav-link active" data-page="overview"><span class="nav-icon">◫</span> Dashboard</a>
-        <div class="nav-caption">EVENT OPERATIONS</div>
-        <a href="#tasks" class="nav-link" data-page="tasks"><span class="nav-icon">☷</span> Tasks & production <i id="taskNavCount">0</i></a>
-        <a href="#ticketing" class="nav-link" data-page="ticketing"><span class="nav-icon">▤</span> Ticketing</a>
-        <a href="#budget" class="nav-link" data-page="budget"><span class="nav-icon">◈</span> Budgeting</a>
-        <a href="#rundown" class="nav-link" data-page="rundown"><span class="nav-icon">◷</span> Rundown</a>
-        <a href="#marketing" class="nav-link" data-page="marketing"><span class="nav-icon">◉</span> Marketing & media</a>
-        <a href="#partners" class="nav-link" data-page="partners"><span class="nav-icon">◇</span> Sponsors & brands</a>
-        <a href="#community" class="nav-link" data-page="community"><span class="nav-icon">♧</span> Community & creators</a>
-        <a href="#people" class="nav-link" data-page="people"><span class="nav-icon">♙</span> Team & crew</a>
-        <a href="#logistics" class="nav-link" data-page="logistics"><span class="nav-icon">▦</span> Logistics</a>
-        <a href="#inbox" class="nav-link" data-page="inbox"><span class="nav-icon">✉</span> Inbox <i id="inboxNavCount">0</i></a><a href="#users" class="nav-link" data-page="users"><span class="nav-icon">⚙</span> Users</a><a href="#activity" class="nav-link" data-page="activity"><span class="nav-icon">☷</span> Activity log</a>
+        <details class="nav-group" open><summary class="nav-caption">OVERVIEW</summary>
+          <a href="#overview" class="nav-link active" data-page="overview"><span class="nav-icon">◫</span> Dashboard</a>
+        </details>
+        <details class="nav-group" open><summary class="nav-caption">PLANNING</summary>
+          <a href="#tasks" class="nav-link" data-page="tasks"><span class="nav-icon">☷</span> Tasks & production <i id="taskNavCount">0</i></a>
+          <a href="#rundown" class="nav-link" data-page="rundown"><span class="nav-icon">◷</span> Rundown</a>
+          <a href="#logistics" class="nav-link" data-page="logistics"><span class="nav-icon">▦</span> Logistics</a>
+        </details>
+        <details class="nav-group" open><summary class="nav-caption">FINANCE &amp; SALES</summary>
+          <a href="#budget" class="nav-link" data-page="budget"><span class="nav-icon">◈</span> Budgeting</a>
+          <a href="#ticketing" class="nav-link" data-page="ticketing"><span class="nav-icon">▤</span> Ticketing</a>
+        </details>
+        <details class="nav-group" open><summary class="nav-caption">MARKETING &amp; PARTNERS</summary>
+          <a href="#marketing" class="nav-link" data-page="marketing"><span class="nav-icon">◉</span> Marketing & media</a>
+          <a href="#partners" class="nav-link" data-page="partners"><span class="nav-icon">◇</span> Sponsors & brands</a>
+          <a href="#community" class="nav-link" data-page="community"><span class="nav-icon">♧</span> Community & creators</a>
+        </details>
+        <details class="nav-group" open><summary class="nav-caption">PEOPLE &amp; COMMS</summary>
+          <a href="#people" class="nav-link" data-page="people"><span class="nav-icon">♙</span> Team & crew</a>
+          <a href="#inbox" class="nav-link" data-page="inbox"><span class="nav-icon">✉</span> Inbox <i id="inboxNavCount">0</i></a>
+        </details>
+        <details class="nav-group" open><summary class="nav-caption">ADMIN</summary>
+          <a href="#users" class="nav-link" data-page="users"><span class="nav-icon">⚙</span> Users</a>
+          <a href="#activity" class="nav-link" data-page="activity"><span class="nav-icon">☷</span> Activity log</a>
+        </details>
       </nav>
       <div class="sidebar-bottom"><div class="side-avatar" id="profileInitial">—</div><div><b id="profileName">Signed out</b><small id="profileRole">User session</small></div><button id="logoutButton" class="logout-button" title="Keluar">↪</button></div>
     </aside>

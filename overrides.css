@@ -560,3 +560,14 @@ body{background:radial-gradient(1200px 600px at 85% -10%,rgba(210,87,31,.12),tra
 .tiny-pending{background:#ffd166}
 .priority-due{color:#ffd166}
 .event-chip,.status-pill{background:#200908;border-color:#6e2313}.sidebar{background:#050202}
+
+/* Grouped, collapsible sidebar navigation */
+.nav-group{display:flex;flex-direction:column;gap:2px}
+.nav-group>summary.nav-caption{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;margin:9px 0 4px;padding:2px 10px;border-radius:6px;user-select:none}
+.nav-group:first-child>summary.nav-caption{margin-top:3px}
+.nav-group>summary::-webkit-details-marker{display:none}
+.nav-group>summary::after{content:"+";font:600 13px 'DM Mono';color:#fbab4a}
+.nav-group[open]>summary::after{content:"−"}
+.nav-group>summary:hover,.nav-group>summary:focus-visible{color:#ffc27a;outline:none;background:rgba(251,171,74,.06)}
+.nav .nav-link{height:34px}
+.nav{overflow-y:auto;min-height:0}
