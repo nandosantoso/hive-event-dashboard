@@ -427,3 +427,18 @@ tbody tr:hover{background:#183236}
 #page-budget .budget-import-input{display:none}
 @media(max-width:900px){#page-budget .page-heading:has(.budget-page-actions){align-items:flex-start;flex-direction:column;gap:16px}#page-budget .budget-page-actions{justify-content:flex-start;width:100%}}
 @media(max-width:600px){#page-budget .budget-page-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}#page-budget .budget-page-actions>.btn{width:100%;min-width:0;padding-inline:8px}}
+
+
+/* User management: last login column */
+.users-panel .table-wrap{overflow-x:auto}
+.users-panel table{width:100%;min-width:1080px;table-layout:fixed}
+.users-panel th:nth-child(1),.users-panel td:nth-child(1){width:15%}
+.users-panel th:nth-child(2),.users-panel td:nth-child(2){width:23%}
+.users-panel th:nth-child(3),.users-panel td:nth-child(3){width:21%}
+.users-panel th:nth-child(4),.users-panel td:nth-child(4){width:12%}
+.users-panel th:nth-child(5),.users-panel td:nth-child(5){width:11%}
+.users-panel th:nth-child(6),.users-panel td:nth-child(6){width:18%}
+.users-panel .last-login-cell{white-space:normal;line-height:1.45;overflow-wrap:anywhere}
+.users-panel .last-login-cell time{white-space:nowrap;color:#e7e5df}
+.users-panel .last-login-empty{display:block;max-width:210px;color:#aeb9b3;font-size:.9em}
+.local-auth-note{line-height:1.5;color:#aeb9b3}
